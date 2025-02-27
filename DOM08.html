@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Box & Check Box</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Collaborated Code!</h1>
+
+    <h3>Combo Box:</h3>
+    <form>
+        <select id="combo_selector" onchange="update_combo()">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+        </select><br><br>
+        <label id="combo_id">Your selected color: None</label>
+    </form>
+
+    <hr>
+
+    <h3>Check Box:</h3>
+    <form>
+        <input type="checkbox" value="Red" name="colour_check" onchange="update_check()"> Red <br>
+        <input type="checkbox" value="Blue" name="colour_check" onchange="update_check()"> Blue <br>
+        <input type="checkbox" value="Green" name="colour_check" onchange="update_check()"> Green <br>
+        <label id="check_id">Your selected colors: None</label>
+    </form>
+
+    <script>
+        update_combo = () => {
+            x = document.getElementById('combo_selector').value
+            document.getElementById('combo_id').innerText = "Your selected color: " + x
+        }
+
+        update_check = () => {
+            x = document.getElementsByName('colour_check')
+            y = Array.from(x).filter(checkbox => checkbox.checked)
+            
+            if (y.length > 0) {
+                z = y.map(checkbox => checkbox.value).join(' , ')
+                document.getElementById('check_id').innerText = "Your selected colors: " + z
+            } else {
+                document.getElementById('check_id').innerText = "Your selected colors: None"
+            }
+        }
+    </script>
+</body>
+</html>
