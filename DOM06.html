@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check box - 2</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color : white;
+        font-family: verdana;
+        font-size: 20px;
+    }
+    
+</style>
+<body>
+    <p>How Would you like your coffee today ?</p>
+    <form>
+        <input type = "checkbox" name = "coffee" value = 'cream' onchange = "update()">cream</input>
+        <input type = "checkbox" name = "coffee" value = 'sugar' onchange = "update()">sugar</input>
+        <input type = "text" id = "selection" size = "50">
+    </form>
+
+    <script>
+        update = () =>{
+            x = document.getElementsByName('coffee')
+            y = Array.from(x).filter(checkbox => checkbox.checked)
+
+            if(y.length > 0 ){
+                z = y.map(checkbox => checkbox.value)
+                document.getElementById('selection').value = "Your order is " + z.join(' , ')
+            }
+            else{
+                document.getElementById('selection').value = " "
+            }
+        }
+    </script>
+    
+</body>
+</html>
