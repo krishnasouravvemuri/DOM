@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calci</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interest Calculator</h1>
+    <form>
+        <label for = 'Pval'>Principal amount : </label>
+        <input type = "text" id = "Pval">
+
+        <label for = 'Rval'>Interest rate : </label>
+        <input type = "text" id = "Rval">
+
+        <label for = 'Tval'>Time (in years) : </label>
+        <input type = "text" id = "Tval"><br><br>
+
+        <label id = "Result" >Intrest will display here </label><br><br>
+
+        <input type = "button" onclick = "Si()" value = "Simple Interest"><br><br>
+        <input type = "button" onclick = "ci()" value = "Compound Interest"><br>
+    </form>
+
+    <script>
+        Si = () => {
+            p = parseFloat(document.getElementById('Pval').value)
+            t = parseFloat(document.getElementById('Tval').value)
+            r = parseFloat(document.getElementById('Rval').value)
+            if(isNaN(p) || isNaN(t) || isNaN(r)){
+                document.getElementById('Result').innerHTML = "Enter valid numbers"
+            }
+            else{
+                si = (p*t*r) / 100
+                document.getElementById('Result').innerHTML = si
+                document.getElementById('Pval').value = ""
+                document.getElementById('Tval').value = ""
+                document.getElementById('Rval').value = ""
+            }
+        }
+        ci = () => {
+            p = parseFloat(document.getElementById('Pval').value)
+            t = parseFloat(document.getElementById('Tval').value)
+            r = parseFloat(document.getElementById('Rval').value)
+            if(isNaN(p) || isNaN(t) || isNaN(r)){
+                document.getElementById('Result').innerHTML = "Enter valid numbers"
+            }
+            else{
+                ci = (p*Math.pow((1+(r/100)),t)) - p
+                document.getElementById('Result').innerHTML = ci
+                document.getElementById('Pval').value = ""
+                document.getElementById('Tval').value = ""
+                document.getElementById('Rval').value = ""
+            }
+        }
+    </script>
+</body>
+</html>
