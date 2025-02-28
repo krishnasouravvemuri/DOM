@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <form name = 'fm1'>
+        <label for = 'f_age'>Age : </label>
+        <input type = 'text' id = 'f_age'>
+        <input type = 'submit' value = "submit" onclick = 'numeric(document.fm1.f_age)'>
+    </form>
+
+    <script>
+        numeric = (ip) =>{
+            num = /^[0-9]+$/
+            if(ip.value.match(num)){
+                alert("valid age")
+                document.fm1.f_age.focus()
+            }
+            else{
+                alert('invalid age')
+                document.fm1.f_age.focus()
+            }
+        }
+    </script>
+</body>
+</html>
