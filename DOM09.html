@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <form name = 'f1' method = "post">
+         <label for = 'fname'>Enter your name :</label>
+         <input id = 'fname' type = 'text' value = '' autofocus>
+         <input onclick = fn1() value = 'submit' type = 'submit'>
+    </form>
+
+    <script>
+        fn1 = () => {
+            if(document.f1.fname.value == ""){
+                alert("Enter valid details !")
+            }
+        }
+    </script>
+</body>
+</html>
