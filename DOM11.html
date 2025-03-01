@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = 'f1'>
+        <label for = "u_name">Pls enter your name :</label>
+        <input id = "u_name" type = "text" >
+        <input type = 'submit' value = "submit" onclick = check()>
+
+        <script>
+            check = () =>{
+                ip = document.f1.u_name
+                al = /^[A-Za-z]+$/
+                if(ip.value.match(al)){
+                    alert("Nice name !")
+                }
+                else{
+                    alert("please enter only alphabets!")
+                }
+        }
+        </script>
+    </form>
+</body>
+</html>
