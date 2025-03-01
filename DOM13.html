@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = 'f1'>
+        <label for = "u_name">Pls enter your mail id :</label>
+        <input id = "u_name" type = "text" >
+        <input type = 'submit' value = "submit" onclick = check()>
+    </form>
+        <script>
+            check = () =>{
+                ip = document.f1.u_name
+                mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+                if(ip.value.match(mail)){
+                    alert("valid!")
+                }
+                else{
+                    alert("invalid!")
+                }
+        }
+        </script>
+    
+</body>
+</html>
