@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color : white;
+    }
+</style>
+<body>
+    <form name = 'f1'>
+        <label for = "u_name">Pls enter your num:</label>
+        <input id = "u_name" type = "text" >
+        <input type = 'submit' value = "submit" onclick = check()>
+    </form>
+        <script>
+            check = () =>{
+                ip = document.f1.u_name
+                dig = /^\d{2}$/
+                al = /^[a-zA-Z]+$/
+
+                if(ip.value.match(dig)){
+                    alert("nunmber accepted")
+                }
+                if(ip.value.match(al)){
+                    alert("Seriously dude ?")
+                }
+                else{
+                    alert("HINT : enter 2 digit numbers to be accepted")
+                }
+        }
+        </script>
+   
+</body>
+</html>
